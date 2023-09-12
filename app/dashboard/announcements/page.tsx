@@ -9,7 +9,7 @@ import DashboardComponent from "../../components/dashboardComponent";
 import Stacks from "@/app/components/stacks";
 import Compose from "@/app/components/compose";
 
-function Fees() {
+function Announcements() {
 
     const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
     const [desktopSidebarOpen, setDesktopSidebarOpen] = useState(true);
@@ -30,7 +30,7 @@ function Fees() {
         setIsOpen(true);
       }
 
-      const inputPlaceholders = ["Month", "Fees Amount", "Deadline", "Fees Payment Link", "Class"];
+      const inputPlaceholders = ["From", "To", "Subject", "Message"];
 
     return (
         <>
@@ -86,4 +86,4 @@ function Fees() {
     )
 }
 
-export default Fees
+export default Announcements

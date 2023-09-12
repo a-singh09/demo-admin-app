@@ -4,10 +4,12 @@ import DropdownButton from "./dropdownButton";
 interface StackProps {
     title: string;
     email: string;
-    dropdownItems?: string[];
+    dropdownItems: DropdownItem[];
 }
 
-
+interface DropdownItem {
+    title: string;
+  }
 
 const Stack = ({ title, email, dropdownItems }: StackProps) => {
     return (
@@ -34,13 +36,14 @@ const Stack = ({ title, email, dropdownItems }: StackProps) => {
 
 interface StacksProps {
     stacks: StackProps[];
+    dropdownItems: DropdownItem[];
 }
 
-const Stacks = ({ stacks }: StacksProps) => {
+const Stacks = ({ stacks, dropdownItems }: StacksProps) => {
     return (
         <>
             {stacks.map((stack, index) => (
-                <Stack key={index} {...stack} />
+                <Stack key={index} {...stack} dropdownItems={dropdownItems} />
             ))}
         </>
     );

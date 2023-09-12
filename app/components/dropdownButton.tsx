@@ -4,7 +4,6 @@ import { Menu, Transition } from "@headlessui/react";
 
 interface DropdownItem {
   title: string;
-  badge?: string;
 }
 
 interface DropdownButtonProps {
@@ -33,7 +32,7 @@ export default function DropdownButton({ items }: DropdownButtonProps) {
             <Menu.Items className="absolute right-0 origin-top-right z-10 mt-2 w-64 shadow-xl rounded-lg dark:shadow-gray-900 focus:outline-none">
               <div className="bg-white ring-1 ring-black ring-opacity-5 rounded-lg divide-y divide-gray-100 dark:bg-gray-800 dark:divide-gray-700 dark:ring-gray-700">
                 <div className="p-2.5 space-y-1">
-                  {items.map((item, index) => (
+                  {items && items.map((item, index) => (
                     <Menu.Item key={index}>
                       {({ active }) => (
                         <a
@@ -43,11 +42,7 @@ export default function DropdownButton({ items }: DropdownButtonProps) {
                           }`}
                         >
                           <span className="grow">{item.title}</span>
-                          {item.badge && (
-                            <div className="font-semibold inline-flex px-1.5 py-0.5 leading-4 text-xs rounded-full border border-rose-200 text-rose-700 bg-rose-100 dark:text-rose-50 dark:bg-rose-700 dark:border-rose-700">
-                              {item.badge}
-                            </div>
-                          )}
+                          
                         </a>
                       )}
                     </Menu.Item>
