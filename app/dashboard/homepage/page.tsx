@@ -69,6 +69,11 @@ function HomePage() {
       content: 'View Contacts',
       footer: 'Footer for Card 2',
       url: 'contacts',
+    }, {
+      title: 'Admission Form',
+      content: 'View Admission Form',
+      footer: 'Footer for Card 2',
+      url: 'admissionform',
     },
   ];
 
