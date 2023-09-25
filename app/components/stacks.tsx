@@ -3,7 +3,8 @@ import DropdownButton from "./dropdownButton";
 
 interface StackProps {
     title: string;
-    email: string;
+    email?: string;
+    message?: string;
     dropdownItems: DropdownItem[];
 }
 
@@ -11,7 +12,7 @@ interface DropdownItem {
     title: string;
   }
 
-const Stack = ({ title, email, dropdownItems }: StackProps) => {
+const Stack = ({ title, email, message, dropdownItems }: StackProps) => {
     return (
         <>
             
@@ -19,6 +20,7 @@ const Stack = ({ title, email, dropdownItems }: StackProps) => {
                 <div className="space-y-1">
                     <h4 className="font-semibold">{title}</h4>
                     <p className="text-sm text-gray-600 dark:text-gray-400">{email}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{message}</p>
                 </div>
                 <div className="flex-none">
                     {/* <button
