@@ -13,9 +13,14 @@ function ManageUsers() {
     const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
     const [desktopSidebarOpen, setDesktopSidebarOpen] = useState(true);
 
+    const dropdownItems = [
+        { title: "Delete" },
+        { title: "Edit" },
+    ];
+
     const stackData = [
-        { title: "Stack 1", email: "stack1@example.com" },
-        { title: "Stack 2", email: "stack2@example.com" },
+        { title: "Stack 1", email: "stack1@example.com", dropdownItems },
+        { title: "Stack 2", email: "stack2@example.com", dropdownItems },
         // Add more stack objects as needed
     ];
 
@@ -53,7 +58,7 @@ function ManageUsers() {
 
                         </form>
                         {/* END Form Elements: Select */}
-                        <Stacks stacks={stackData} />
+                        <Stacks stacks={stackData} dropdownItems={dropdownItems} />
 
                     </div>
                     {/* END Page Section */}
