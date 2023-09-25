@@ -5,6 +5,7 @@ interface StackProps {
     title: string;
     email?: string;
     message?: string;
+    phoneNumber?: number;
     dropdownItems: DropdownItem[];
 }
 
@@ -12,15 +13,16 @@ interface DropdownItem {
     title: string;
   }
 
-const Stack = ({ title, email, message, dropdownItems }: StackProps) => {
+const Stack = ({ title, email, message, phoneNumber, dropdownItems }: StackProps) => {
     return (
         <>
             
             <form className="flex items-center justify-between space-x-2 p-4 my-2 rounded-lg bg-rose-100 dark:bg-gray-900/50">
                 <div className="space-y-1">
                     <h4 className="font-semibold">{title}</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{email}</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{message}</p>
+                    {email && <p className="text-sm text-gray-600 dark:text-gray-400"><strong>Email: </strong>{email}</p>}
+                    {phoneNumber && <p className="text-sm text-gray-600 dark:text-gray-400"><strong>Phone No: </strong>{phoneNumber}</p>}
+                    {message && <p className="text-sm text-gray-600 dark:text-gray-400">{message}</p>}
                 </div>
                 <div className="flex-none">
                     {/* <button

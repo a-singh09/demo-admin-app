@@ -16,6 +16,7 @@ function Contacts() {
     const [isOpen, setIsOpen] = useState(false);
 
     const dropdownItems = [
+        { title: "Send Mail" },
         { title: "Delete" },
         { title: "Edit" },
     ];
@@ -30,7 +31,7 @@ function Contacts() {
         setIsOpen(true);
       }
 
-      const inputPlaceholders = ["From", "To", "Subject", "Message"];
+      const inputPlaceholders = ["Name", "Contact", "Email Address"];
 
     return (
         <>

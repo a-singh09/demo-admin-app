@@ -40,15 +40,16 @@ const Table: React.FC<TableProps> = ({ users, dropdownItems }) => {
                         <select
                             id="date"
                             name="date"
+                            defaultValue="student"
                             className="sm:w-36 block border font-semibold border-gray-200 rounded-lg px-3 py-2 leading-5 text-sm w-full focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-50 dark:bg-gray-800 dark:border-gray-700 dark:focus:border-rose-500"
                         >
-                            <option>Principal</option>
-                            <option>Teacher</option>
-                            <option selected>Student</option>
-                            <option>Driver</option>
-                            <option>Employee</option>
-                            <option>Classroom</option>
-                            <option>Buses</option>
+                            <option value="principal">Principal</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="student">Student</option>
+                            <option value="driver">Driver</option>
+                            <option value="employee">Employee</option>
+                            <option value="classroom">Classroom</option>
+                            <option value="buses">Buses</option>
                         </select>
                     </div>
                 </div>
@@ -59,7 +60,7 @@ const Table: React.FC<TableProps> = ({ users, dropdownItems }) => {
                                 type="text"
                                 id="primary_normal"
                                 name="primary_normal"
-                                placeholder="Enter Student Mail"
+                                placeholder="Enter Student Name"
                                 className="grow focus:z-1 mr-6 w-full block border placeholder-gray-500 px-3 py-2 leading-6 rounded-lg border-gray-200 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-50 dark:bg-gray-800 dark:border-gray-600 dark:focus:border-rose-500 dark:placeholder-gray-400"
                             />
                             <input
@@ -69,6 +70,27 @@ const Table: React.FC<TableProps> = ({ users, dropdownItems }) => {
                                 placeholder="Enter Admission No."
                                 className="grow focus:z-1 mr-6 w-full block border placeholder-gray-500 px-3 py-2 leading-6 rounded-lg border-gray-200 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-50 dark:bg-gray-800 dark:border-gray-600 dark:focus:border-rose-500 dark:placeholder-gray-400"
                             />
+                            <input
+                                type="text"
+                                id="primary_normal"
+                                name="primary_normal"
+                                placeholder="Enter Date of Joining"
+                                className="grow focus:z-1 mr-6 w-full block border placeholder-gray-500 px-3 py-2 leading-6 rounded-lg border-gray-200 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-50 dark:bg-gray-800 dark:border-gray-600 dark:focus:border-rose-500 dark:placeholder-gray-400"
+                            />
+                            <select
+                                id="primary_normal"
+                                name="primary_normal"
+                                className="grow focus:z-1 mr-6 w-full block border px-3 py-2 leading-6 rounded-lg border-gray-200 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-50 dark:bg-gray-800 dark:border-gray-600 dark:focus:border-rose-500"
+                            >
+                                <option value="" disabled>
+                                    Select an option
+                                </option>
+                                <option value="option1">Option 1</option>
+                                <option value="option2">Option 2</option>
+                                <option value="option3">Option 3</option>
+                            </select>
+
+
                             <button
                                 type="button"
                                 className="flex-none inline-flex justify-center items-center space-x-2 border font-semibold rounded-lg px-4 py-2 leading-6 border-rose-700 bg-rose-700 text-white hover:text-white hover:bg-rose-600 hover:border-rose-600 focus:ring focus:ring-rose-400 focus:ring-opacity-50 active:bg-rose-700 active:border-rose-700 dark:focus:ring-rose-400 dark:focus:ring-opacity-90"
