@@ -4,6 +4,7 @@ import { Menu, Transition } from "@headlessui/react";
 
 interface DropdownItem {
   title: string;
+  onClick?: () => void;
 }
 
 interface DropdownButtonProps {
@@ -41,7 +42,7 @@ export default function DropdownButton({ items }: DropdownButtonProps) {
                             active ? "text-rose-800 bg-rose-50 dark:text-white dark:bg-gray-700/75 dark:border-transparent" : "text-gray-700 hover:text-rose-800 hover:bg-rose-50 active:border-rose-100 dark:text-gray-200 dark:hover:text-white dark:hover:bg-gray-700/75 dark:active:border-gray-600"
                           }`}
                         >
-                          <span className="grow">{item.title}</span>
+                          <span className="grow" onClick={item.onClick}>{item.title}</span>
                           
                         </a>
                       )}

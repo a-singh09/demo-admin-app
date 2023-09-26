@@ -1,11 +1,14 @@
 import Link from "next/link";
 import DropdownButton from "./dropdownButton";
+import {HiMail, HiPhone} from "react-icons/hi"
+import {ImWhatsapp} from "react-icons/im"
 
 interface StackProps {
     title: string;
     email?: string;
     message?: string;
     phoneNumber?: number;
+    whatsappNumber?: number;
     dropdownItems: DropdownItem[];
 }
 
@@ -13,15 +16,16 @@ interface DropdownItem {
     title: string;
   }
 
-const Stack = ({ title, email, message, phoneNumber, dropdownItems }: StackProps) => {
+const Stack = ({ title, email, message, phoneNumber, whatsappNumber, dropdownItems }: StackProps) => {
     return (
         <>
             
             <form className="flex items-center justify-between space-x-2 p-4 my-2 rounded-lg bg-rose-100 dark:bg-gray-900/50">
                 <div className="space-y-1">
                     <h4 className="font-semibold">{title}</h4>
-                    {email && <p className="text-sm text-gray-600 dark:text-gray-400"><strong>Email: </strong>{email}</p>}
-                    {phoneNumber && <p className="text-sm text-gray-600 dark:text-gray-400"><strong>Phone No: </strong>{phoneNumber}</p>}
+                    {email && <div className="flex items-center space-x-2"><HiMail /> <p className="text-sm text-gray-600 dark:text-gray-400"><strong>Email: </strong>{email} </p></div>}
+                    {phoneNumber && <div className="flex items-center space-x-2"><HiPhone /> <p className="text-sm text-gray-600 dark:text-gray-400"><strong>Phone No: </strong>{phoneNumber} </p></div>}
+                    {whatsappNumber && <div className="flex items-center space-x-2"><ImWhatsapp /> <p className="text-sm text-gray-600 dark:text-gray-400"><strong>Whatsapp No: </strong>{whatsappNumber} </p></div>}
                     {message && <p className="text-sm text-gray-600 dark:text-gray-400">{message}</p>}
                 </div>
                 <div className="flex-none">
