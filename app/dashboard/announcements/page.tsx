@@ -21,8 +21,8 @@ function Announcements() {
     ];
 
     const stackData = [
-        { title: "Stack 1", email: "stack1@example.com", dropdownItems },
-        { title: "Stack 2", email: "stack2@example.com", dropdownItems },
+        { title: "Stack 1", message: "Lorem ipsum dolor sit amet.", dropdownItems },
+        { title: "Stack 2", message: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam esse sint corporis consequatur voluptate neque corrupti, fugit assumenda fugiat, porro sequi. Dolorem, non molestiae? Adipisci sint, laboriosam quo possimus aliquid dignissimos iure repellat at.", dropdownItems },
         // Add more stack objects as needed
     ];
 

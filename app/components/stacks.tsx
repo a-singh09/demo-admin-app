@@ -2,6 +2,8 @@ import Link from "next/link";
 import DropdownButton from "./dropdownButton";
 import {HiMail, HiPhone} from "react-icons/hi"
 import {ImWhatsapp} from "react-icons/im"
+import {BiArrowFromTop} from "react-icons/bi"
+import {BiArrowFromBottom} from "react-icons/bi"
 
 interface StackProps {
     title: string;
@@ -9,6 +11,8 @@ interface StackProps {
     message?: string;
     phoneNumber?: number;
     whatsappNumber?: number;
+    fromDate?: string;
+    toDate?: string;
     dropdownItems: DropdownItem[];
 }
 
@@ -16,7 +20,7 @@ interface DropdownItem {
     title: string;
   }
 
-const Stack = ({ title, email, message, phoneNumber, whatsappNumber, dropdownItems }: StackProps) => {
+const Stack = ({ title, email, message, phoneNumber, whatsappNumber, fromDate, toDate, dropdownItems }: StackProps) => {
     return (
         <>
             
@@ -24,6 +28,8 @@ const Stack = ({ title, email, message, phoneNumber, whatsappNumber, dropdownIte
                 <div className="space-y-1">
                     <h4 className="font-semibold">{title}</h4>
                     {email && <div className="flex items-center space-x-2"><HiMail /> <p className="text-sm text-gray-600 dark:text-gray-400"><strong>Email: </strong>{email} </p></div>}
+                    {fromDate && <div className="flex items-center space-x-2"><BiArrowFromBottom /> <p className="text-sm text-gray-600 dark:text-gray-400"><strong>From: </strong>{fromDate} </p></div>}
+                    {toDate && <div className="flex items-center space-x-2"><BiArrowFromTop /> <p className="text-sm text-gray-600 dark:text-gray-400"><strong>To: </strong>{toDate} </p></div>}
                     {phoneNumber && <div className="flex items-center space-x-2"><HiPhone /> <p className="text-sm text-gray-600 dark:text-gray-400"><strong>Phone No: </strong>{phoneNumber} </p></div>}
                     {whatsappNumber && <div className="flex items-center space-x-2"><ImWhatsapp /> <p className="text-sm text-gray-600 dark:text-gray-400"><strong>Whatsapp No: </strong>{whatsappNumber} </p></div>}
                     {message && <p className="text-sm text-gray-600 dark:text-gray-400">{message}</p>}

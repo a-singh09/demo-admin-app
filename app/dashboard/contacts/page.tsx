@@ -22,8 +22,8 @@ function Contacts() {
     ];
 
     const stackData = [
-        { title: "Stack 1", email: "stack1@example.com", dropdownItems },
-        { title: "Stack 2", email: "stack2@example.com", dropdownItems },
+        { title: "Stack 1", email: "stack1@example.com", phoneNumber: 1234567890, whatsappNumber: 1234567890, dropdownItems },
+        { title: "Stack 2", email: "stack2@example.com", phoneNumber: 1234567890, whatsappNumber: 1234567890, dropdownItems },
         // Add more stack objects as needed
     ];
 
