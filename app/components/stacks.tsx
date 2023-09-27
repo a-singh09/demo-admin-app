@@ -13,6 +13,7 @@ interface StackProps {
     whatsappNumber?: number;
     fromDate?: string;
     toDate?: string;
+    datePosted?: string;
     dropdownItems: DropdownItem[];
 }
 
