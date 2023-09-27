@@ -21,7 +21,7 @@ function Leaves() {
 
     const stackData = [
         { title: "Stack 1", fromDate: "14-04-23", toDate: "16-04-23", email:'test@test.com', message: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque quod eaque repellat at fugit magnam quibusdam modi ipsam fugiat id?", dropdownItems },
-        { title: "Stack 2", fromDate: "14-04-23", toDate: "16-04-23", email:'test@test.com', message: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque voluptatibus ducimus vero dolore nostrum? Voluptatibus quidem, sed aliquid ab repellendus sequi, cupiditate quaerat culpa sunt totam eveniet veniam eligendi quasi placeat quisquam maiores hic? Tenetur obcaecati itaque, iure quaerat quibusdam minima ad voluptatibus quia id quasi natus cumque tempore beatae qui a iusto atque nihil.", dropdownItems },
+        { title: "Stack 2", fromDate: "14-04-23", toDate: "16-04-23", email:'test@test.com', message: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque voluptatibus ducimus vero dolore nostrum? Voluptatibus quidem.", dropdownItems },
         // Add more stack objects as needed
     ];
 
