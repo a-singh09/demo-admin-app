@@ -5,10 +5,11 @@ import DropdownButton from "./dropdownButton";
 interface User {
     name: string;
     admissionNumber: string;
-    fees: number;
-    balance: number;
+    fees?: number;
+    balance?: number;
     class: number;
     section: string;
+    contact: number;
 }
 
 interface DropdownItem {
@@ -38,10 +39,11 @@ const Table: React.FC<TableProps> = ({ users, dropdownItems }) => {
                     <td className="p-3 text-gray-500 dark:text-gray-400">
                         {user.admissionNumber}
                     </td>
-                    <td className="p-3 text-right">Rs. {user.fees}</td>
-                    <td className="p-3 text-right">Rs. {user.balance}</td>
+                    {user.fees && <td className="p-3 text-right">Rs. {user.fees}</td>}
+                    {user.balance && <td className="p-3 text-right">Rs. {user.balance}</td>}
                     <td className="p-3 text-right">{user.class}</td>
                     <td className="p-3 text-right">{user.section}</td>
+                    <td className="p-3 text-right">{user.contact}</td>
                     <td className="pl-3 py-3 text-right">
                         <DropdownButton items={dropdownItems} />
                     </td>

@@ -13,6 +13,7 @@ export default function CreateUsers() {
   const [isOpen, setIsOpen] = useState(false);
 
   const dropdownItems = [
+    { title: "Collect Fee", onClick: openModal },
     { title: "Check Report", onClick: openModal },
   ];
 
@@ -23,7 +24,8 @@ export default function CreateUsers() {
       fees: 20000,
       balance: 40000,
       class: 3,
-      section: "B"
+      section: "B",
+      contact: 1234567890,
     },
     {
       name: "Steve",
@@ -31,7 +33,8 @@ export default function CreateUsers() {
       fees: 20000,
       balance: 40000,
       class: 3,
-      section: "B"
+      section: "B",
+      contact: 1234567890,
     },
   ];
 
@@ -39,7 +42,7 @@ export default function CreateUsers() {
     setIsOpen(true);
   }
 
-  const inputPlaceholders = ["Name", "To", "Subject", "Message"];
+  const inputPlaceholders = ["Name", "Contact", "Fee Paid", "Date  (example: 29-05-2021)", "Remarks"];
 
   return (
     <>
@@ -153,6 +156,9 @@ export default function CreateUsers() {
                           Section
                         </th>
                         <th className="px-3 pb-4 text-gray-900 border-b-2 border-gray-200/50 font-semibold text-right dark:text-gray-50 dark:border-gray-700">
+                          Contact
+                        </th>
+                        <th className="px-3 pb-4 text-gray-900 border-b-2 border-gray-200/50 font-semibold text-right dark:text-gray-50 dark:border-gray-700">
                           Actions
                         </th>
                       </tr>
@@ -165,7 +171,11 @@ export default function CreateUsers() {
                   {/* END Table */}
                 </div>
                 {/* END Responsive Table Container */}
-                
+                <div className="flex justify-start">
+                  <button type="button" onClick={openModal} className="inline-flex mr-2 mt-2 justify-center items-center space-x-2 border font-semibold rounded-lg px-4 py-2 leading-6 border-rose-700 bg-rose-700 text-white hover:text-white hover:bg-rose-600 hover:border-rose-600 focus:ring focus:ring-rose-400 focus:ring-opacity-50 active:bg-rose-700 active:border-rose-700 dark:focus:ring-rose-400 dark:focus:ring-opacity-90">
+                    Add New
+                  </button>
+                </div>
                 <div className="flex justify-end">
                   <button
                     type="button"

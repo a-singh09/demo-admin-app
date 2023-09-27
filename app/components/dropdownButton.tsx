@@ -1,3 +1,5 @@
+"use client"
+
 import { Fragment } from "react";
 
 import { Menu, Transition } from "@headlessui/react";
@@ -30,7 +32,7 @@ export default function DropdownButton({ items }: DropdownButtonProps) {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-90"
           >
-            <Menu.Items className="absolute right-0 origin-top-right z-10 mt-2 w-64 shadow-xl rounded-lg dark:shadow-gray-900 focus:outline-none">
+            <Menu.Items className="absolute right-0 origin-top-right z-50 mt-2 w-64 shadow-xl rounded-lg dark:shadow-gray-900 focus:outline-none">
               <div className="bg-white ring-1 ring-black ring-opacity-5 rounded-lg divide-y divide-gray-100 dark:bg-gray-800 dark:divide-gray-700 dark:ring-gray-700">
                 <div className="p-2.5 space-y-1">
                   {items && items.map((item, index) => (

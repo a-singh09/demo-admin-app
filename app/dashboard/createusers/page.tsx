@@ -1,5 +1,6 @@
 "use client"
 
+import Compose from "@/app/components/compose";
 import DashboardComponent from "@/app/components/dashboardComponent";
 import Footer from "@/app/components/footer";
 import Table from "@/app/components/table";
@@ -9,6 +10,7 @@ export default function CreateUsers() {
 
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [desktopSidebarOpen, setDesktopSidebarOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const dropdownItems = [
     { title: "Delete" },
@@ -18,21 +20,25 @@ export default function CreateUsers() {
   const users = [
     {
       name: "John",
-      admissionNumber: "98987321",
-      fees: 20000,
-      balance: 40000,
+      admissionNumber: "98987321",     
       class: 3,
-      section: "B"
+      section: "B",
+      contact: 1234567890,
     },
     {
       name: "Steve",
       admissionNumber: "98987321",
-      fees: 20000,
-      balance: 40000,
       class: 3,
-      section: "B"
+      section: "B",
+      contact: 1234567890,
     },
   ];
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  const inputPlaceholders = ["Full Name", "Admission Number", "Contact", "Grade", "Section"];
 
   return (
     <>
@@ -42,6 +48,9 @@ export default function CreateUsers() {
           }`}
       >
         <DashboardComponent />
+
+        <Compose isOpen={isOpen} setIsOpen={setIsOpen} inputPlaceholders={inputPlaceholders} />
+
         <main id="page-content" className="flex flex-auto flex-col max-w-full pt-16">
           {/* Page Section */}
           <div className="container xl:max-w-7xl mx-auto p-4 lg:p-8 w-full">
@@ -143,13 +152,16 @@ export default function CreateUsers() {
                           Name
                         </th>
                         <th className="px-3 pb-4 text-gray-900 border-b-2 border-gray-200/50 font-semibold text-left dark:text-gray-50 dark:border-gray-700">
-                          Email
+                          Admission No.
                         </th>
                         <th className="px-3 pb-4 text-gray-900 border-b-2 border-gray-200/50 font-semibold text-left dark:text-gray-50 dark:border-gray-700">
-                          Plan
+                          Grade
                         </th>
                         <th className="px-3 pb-4 text-gray-900 border-b-2 border-gray-200/50 font-semibold text-right dark:text-gray-50 dark:border-gray-700">
-                          MMR
+                          Section
+                        </th>
+                        <th className="px-3 pb-4 text-gray-900 border-b-2 border-gray-200/50 font-semibold text-right dark:text-gray-50 dark:border-gray-700">
+                          Contact
                         </th>
                         <th className="px-3 pb-4 text-gray-900 border-b-2 border-gray-200/50 font-semibold text-right dark:text-gray-50 dark:border-gray-700">
                           Actions
@@ -164,6 +176,11 @@ export default function CreateUsers() {
                   {/* END Table */}
                 </div>
                 {/* END Responsive Table Container */}
+                <div className="flex justify-start">
+                  <button type="button" onClick={openModal} className="inline-flex mr-2 mt-2 justify-center items-center space-x-2 border font-semibold rounded-lg px-4 py-2 leading-6 border-rose-700 bg-rose-700 text-white hover:text-white hover:bg-rose-600 hover:border-rose-600 focus:ring focus:ring-rose-400 focus:ring-opacity-50 active:bg-rose-700 active:border-rose-700 dark:focus:ring-rose-400 dark:focus:ring-opacity-90">
+                    Add New
+                  </button>
+                </div>
                 <div className="flex justify-end">
                   <button
                     type="button"
