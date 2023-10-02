@@ -1,6 +1,7 @@
 "use client"
 
 import { Fragment, useState } from "react";
+import { useRouter } from 'next/router';
 
 // Headless UI, for more info and examples you can check out https://github.com/tailwindlabs/headlessui
 import { Menu, Transition } from "@headlessui/react";
@@ -13,11 +14,9 @@ function Classrooms() {
     const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
     const [desktopSidebarOpen, setDesktopSidebarOpen] = useState(true);
 
-    
-
     const dropdownItems = [
-        { title: "Exams" },
-        { title: "Attendance" },
+        { title: "Exams", onClick: openTable },
+        { title: "Attendance", onClick: openTable },
     ];
 
     const stackData = [
@@ -26,9 +25,11 @@ function Classrooms() {
         // Add more stack objects as needed
     ];
 
-    console.log(dropdownItems);
-    console.log(stackData);
+    // const router = useRouter();
 
+    function openTable() {
+        // router.push('/classrooms/score');
+    }
 
     return (
         <>

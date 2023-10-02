@@ -1,9 +1,9 @@
 import Link from "next/link";
 import DropdownButton from "./dropdownButton";
-import {HiMail, HiPhone} from "react-icons/hi"
-import {ImWhatsapp} from "react-icons/im"
-import {BiArrowFromTop} from "react-icons/bi"
-import {BiArrowFromBottom} from "react-icons/bi"
+import { HiMail, HiPhone } from "react-icons/hi"
+import { ImWhatsapp } from "react-icons/im"
+import { BiArrowFromTop } from "react-icons/bi"
+import { BiArrowFromBottom } from "react-icons/bi"
 
 interface StackProps {
     title: string;
@@ -19,12 +19,13 @@ interface StackProps {
 
 interface DropdownItem {
     title: string;
-  }
+    onClick?: () => void;
+}
 
-const Stack = ({ title, email, message, phoneNumber, whatsappNumber, fromDate, toDate, dropdownItems }: StackProps) => {
+const Stack:React.FC<StackProps> = ({ title, email, message, phoneNumber, whatsappNumber, fromDate, toDate, dropdownItems }) => {
     return (
         <>
-            
+
             <form className="flex items-center justify-between space-x-2 p-4 my-2 rounded-lg bg-rose-100 dark:bg-gray-900/50">
                 <div className="space-y-1">
                     <h4 className="font-semibold">{title}</h4>
