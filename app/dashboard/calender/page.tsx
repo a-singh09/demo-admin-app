@@ -1,6 +1,6 @@
 "use client"
 import { EventInput } from '@fullcalendar/core';
-import MyCalendar from '../../components/calender';
+// import MyCalendar from '../../components/calender';
 import { useState } from 'react';
 
 const CalendarPage: React.FC = () => {
@@ -29,7 +29,7 @@ const CalendarPage: React.FC = () => {
     <div>
       <h1>Custom Calendar</h1>
       <button onClick={addEvent}>Add Event</button>
-      <MyCalendar events={events} />
+      {/* <MyCalendar events={events} /> */}
     </div>
   );
 };
