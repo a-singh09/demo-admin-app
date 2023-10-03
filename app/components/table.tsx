@@ -11,6 +11,7 @@ interface User {
     class?: number;
     section?: string;
     contact?: number;
+    attendance?: string;
 
     // subjects
     english?: number;
@@ -56,6 +57,7 @@ const Table: React.FC<TableProps> = ({ users, dropdownItems }) => {
                     {user.section && <td className="p-3 text-right">{user.section}</td>}
                     {user.contact && <td className="p-3 text-right">{user.contact}</td>}
                     {user.rollNumber && <td className="p-3 text-right">{user.rollNumber}</td>}
+                    {user.attendance && <td className="p-3 text-right">{user.attendance}</td>}
                     {user.english && <td className="p-3 text-right">{user.english}</td>}
                     {user.punjabi && <td className="p-3 text-right">{user.punjabi}</td>}
                     {user.maths && <td className="p-3 text-right">{user.maths}</td>}
