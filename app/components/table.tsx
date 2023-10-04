@@ -27,6 +27,15 @@ interface User {
     eventName?: string;
     fromDate?: string;
     toDate?: string;
+
+    //timetable
+    time?: string;
+    monday?: string;
+    tuesday?: string;
+    wednesday?: string;
+    thursday?: string;
+    friday?: string;
+    saturday?: string;
 }
 
 interface DropdownItem {
