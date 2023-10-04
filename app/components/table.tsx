@@ -36,6 +36,11 @@ interface User {
     thursday?: string;
     friday?: string;
     saturday?: string;
+
+    //fees
+    date?: string;
+    amountPaid?: number;
+    remarks?: string;
 }
 
 interface DropdownItem {
@@ -85,6 +90,11 @@ const Table: React.FC<TableProps> = ({ users, dropdownItems }) => {
                     {user.eventName && <td className="p-3 text-center">{user.eventName}</td>}
                     {user.fromDate && <td className="p-3 text-center">{user.fromDate}</td>}
                     {user.toDate && <td className="p-3 text-center">{user.toDate}</td>}
+
+                    {/* fees */}
+                    {user.date && <td className="p-3 text-center">{user.date}</td>}
+                    {user.amountPaid && <td className="p-3 text-center">{user.amountPaid}</td>}
+                    {user.remarks && <td className="p-3 text-center">{user.remarks}</td>}
 
                     <td className="pl-3 py-3 text-right">
                         <DropdownButton items={dropdownItems} />
