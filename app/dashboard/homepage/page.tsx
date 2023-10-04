@@ -60,11 +60,6 @@ function HomePage() {
       footer: 'Footer for Card 2',
       url: 'classrooms',
     }, {
-      title: 'Academic Calender',
-      content: 'View and Edit Academic Calender',
-      footer: 'Footer for Card 2',
-      url: 'calendar',
-    }, {
       title: 'Contacts',
       content: 'View Contacts',
       footer: 'Footer for Card 2',
